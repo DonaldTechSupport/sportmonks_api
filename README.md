@@ -1,20 +1,32 @@
 # Sportmonks Api
 
-Unnoficial Api to retrieve soccer data from [Sportmonks](https://sportmonks.com/)
+Unnoficial Python Api to retrieve soccer data from [Sportmonks](https://sportmonks.com/).
+I have no relationship with Sportmonks and this project is simply to aid those who work with their Soccer API.
 
-Example:
+##Using the module
+
+In order to use the module a token is needed.
+
+For more information on the details and scope of Sportmonks API, please refer to its [official documentation](https://sportmonks.com/sports/soccer/documentation).
+
+Import module
 ```python
 import sportmonks_calls as sm
+```
 
-#load features class
+Load features class
+```python
 fixtures = sm.Fixtures(sportmonks_token)
+```
 
-#query all fixtures by specific date
+Query all fixtures by specific date
+```python
 fixture_date = '2017-10-10'
 fixtures.by_date(fixture_date)
+```
 
-print (fixture.request.results)
-
+Result:
+```javascript
 [{'aggregate_id': None,
   'attendance': None,
   'coaches': {'localteam_coach_id': None, 'visitorteam_coach_id': None},
