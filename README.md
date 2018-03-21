@@ -3,7 +3,7 @@
 Unnoficial Python Api to retrieve soccer data from [Sportmonks](https://sportmonks.com/).
 I have no relationship with Sportmonks and this project is simply to aid those who work with their Soccer API.
 
-##Using the module
+## Using the module
 
 In order to use the module a token is needed.
 
