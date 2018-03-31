@@ -93,8 +93,10 @@ sportmonks_token = settings['sportmonks']['api_token']
 #global class to call SporMonks API
 class Spms(object):
     """
-    Info: General sportmonks request class
+    General sportmonks request class
     --------------------------------------
+        Methods Available:
+        | make_request()
     """
 
     def __init__(self, token='', include = ''):
@@ -384,6 +386,7 @@ class Commentaries(object):
         self.request.make_request(http_request, paginated = False)
         return True
 
+
 class Videos(object):
 
     endpoint = http + '/highlights'
@@ -428,6 +431,7 @@ class Head2Head(object):
         self.request.make_request(http_request, paginated = False)
         return True
 
+
 class TVStations(object):
 
     endpoint = http + '/tvstations'
@@ -469,6 +473,7 @@ class Standings(object):
         http_request = self.endpoint + '/season/live/{0}'.format(season_id)
         self.request.make_request(http_request, paginated = False)
         return True
+
 
 class Teams(object):
 
@@ -577,6 +582,7 @@ class In_Play_Odds(object):
         http_request = self.endpoint + '/fixture/{0}'.format(fixture_id)
         self.request.make_request(http_request, paginated = False)
         return True
+
 
 class Players(object):
 

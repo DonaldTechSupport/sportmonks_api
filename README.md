@@ -9,26 +9,37 @@ In order to use the module a user token is needed. Bear in mind the results migh
 
 For more information on the details and scope of Sportmonks API, please refer to its [official documentation](https://sportmonks.com/sports/soccer/documentation).
 
-Installation
+## Installation
+
+- Using pip
 ```bash
 pip install git+https://github.com/calestini/sportmonks_api.git
 ```
 
-Import module
+## Dependencies
+
+- [requests](http://docs.python-requests.org/en/master/)
+- [json](https://docs.python.org/2/library/json.html)
+- [time](https://docs.python.org/2/library/time.html)
+- [collections](https://docs.python.org/2/library/collections.html)
+
+## Import module
 ```python
-import sportmonks_calls as sm
+>>> import sportmonks_calls as sm
 ```
+
+## Example
 
 Load features class
 ```python
-fixtures = sm.Fixtures(sportmonks_token)
+>>> fixtures = sm.Fixtures(sportmonks_token)
 ```
 
 Query all fixtures by specific date
 ```python
 >>> fixture_date = '2017-10-10'
 >>> fixtures.by_date(fixture_date)
-
+>>> print (fixtures.request.results)
 [{'aggregate_id': None,
   'attendance': None,
   'coaches': {'localteam_coach_id': None, 'visitorteam_coach_id': None},
@@ -69,3 +80,29 @@ Query all fixtures by specific date
   'weather_report': None,
   'winning_odds_calculated': True}]
 ```
+
+## Documentation
+
+Every endpoint is a class, and below are the classes available:
+
+| Endpoint | Class | Methods | Mapped Level (0-100) |
+|:-:|:-:|:-:|:-:|
+|...| Fixture | ... | ... |
+|...| Pre_Match_Odds | ... | ... |
+|...| Continents | ... | ... |
+|...| Countries | ... | ... |
+|...| Leagues | ... | ... |
+|...| Seasons | ... | ... |
+|...| Commentaries | ... | ... |
+|...| Videos | ... | ... |
+|...| Head2Head | ... | ... |
+|...| TVStations | ... | ... |
+|...| Standings | ... | ... |
+|...| Teams | ... | ... |
+|...| Topscorers | ... | ... |
+|...| Venues | ... | ... |
+|...| Rounds | ... | ... |
+|...| In_Play_Odds | ... | ... |
+|...| Players | ... | ... |
+|...| Bookmakers | ... | ... |
+|...| Team_Squads | ... | ... |
