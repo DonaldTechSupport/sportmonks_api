@@ -74,31 +74,48 @@ includes = {
 }
 
 
-
 ################################################################################
+####debug-global-var############################################################
 
 http = 'https://soccer.sportmonks.com/api/v2.0'
 
-####debug-global-var############################################################
-DEBUG_MODE = True
-################################################################################
+DEBUG_MODE = False
 
-#change path for future reference
-with open('/home/calestini/Documents/settings.json') as json_data:
+token_path = ''
+
+with open('{0}/settings.json'.format(token_path)) as json_data:
     settings = json.load(json_data)
+
 sportmonks_token = settings['sportmonks']['api_token']
 
 ################################################################################
 
 #global class to call SporMonks API
 class Spms(object):
+    """
+    Info: General sportmonks request class
+    --------------------------------------
+    """
 
     def __init__(self, token='', include = ''):
+        """
+        parameters :
+        ------------
+            | token: sportmonks token
+            | include: string with all includes for the API request
+        """
         self.token = token
         self.include = include
         self.api_calls = 0
 
     def make_request(self, endpoint, paginated = False, verbose=DEBUG_MODE):
+        """
+        parameters :
+        ------------
+            | endpoint: endpoint for the request
+            | paginated: boolean. View documentation for more info
+            | verbose: boolean
+        """
         #if paginated = true, then make sure to loop through all pages
         self.payload = {'api_token': self.token,
             'Accept': 'application/json',
@@ -143,10 +160,11 @@ class Spms(object):
 
 class Livescores(object):
     """
-        Class to query livescores.
-        Methods Available:
-            get_all()
-            get_all_today()
+        Class to query livescores
+        -------------------------
+            Methods Available:
+            | get_all()
+            | get_all_today()
     """
     endpoint = http + '/livescores'
     includes = {

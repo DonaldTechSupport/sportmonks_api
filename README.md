@@ -1,4 +1,4 @@
-# Sportmonks Api
+# Sportmonks API
 
 Unnoficial Python API to retrieve soccer data from [Sportmonks](https://sportmonks.com/).
 Disclaimer: I have no relationship with Sportmonks and this project is simply to aid those who work with their soccer API.
@@ -8,6 +8,11 @@ Disclaimer: I have no relationship with Sportmonks and this project is simply to
 In order to use the module a user token is needed. Bear in mind the results might differ based on the subscription plan. Results hereby shown are for the full subscription pagkage.
 
 For more information on the details and scope of Sportmonks API, please refer to its [official documentation](https://sportmonks.com/sports/soccer/documentation).
+
+Installation
+```bash
+pip install git+https://github.com/calestini/sportmonks_api.git
+```
 
 Import module
 ```python
@@ -21,12 +26,9 @@ fixtures = sm.Fixtures(sportmonks_token)
 
 Query all fixtures by specific date
 ```python
-fixture_date = '2017-10-10'
-fixtures.by_date(fixture_date)
-```
+>>> fixture_date = '2017-10-10'
+>>> fixtures.by_date(fixture_date)
 
-Result:
-```python
 [{'aggregate_id': None,
   'attendance': None,
   'coaches': {'localteam_coach_id': None, 'visitorteam_coach_id': None},
