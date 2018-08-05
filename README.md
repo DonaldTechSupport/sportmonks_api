@@ -11,9 +11,9 @@ For more information on the details and scope of Sportmonks API, please refer to
 
 ## Installation
 
-- Using pip
+- Cloning Repo
 ```bash
-pip install git+https://github.com/calestini/sportmonks_api.git
+git clone https://github.com/calestini/sportmonks_api.git
 ```
 
 ## Dependencies
@@ -87,7 +87,7 @@ Every endpoint is a class, and below are the classes available:
 
 | Endpoint | Class | Methods | Mapped Level (0-100) |
 |:-:|:-:|:-:|:-:|
-|...| Fixture | ... | ... |
+|| Fixture | ... | ... |
 |...| Pre_Match_Odds | ... | ... |
 |...| Continents | ... | ... |
 |...| Countries | ... | ... |
